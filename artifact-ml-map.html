@@ -10,11 +10,7 @@
       --panel: #ffffff;
       --navy: #0f172a;
       --blue: #2563eb;
-      --cyan: #06b6d4;
       --green: #10b981;
-      --amber: #f59e0b;
-      --purple: #8b5cf6;
-      --red: #ef4444;
       --text: #1f2937;
       --muted: #475569;
       --line: #dfeaf6;
@@ -30,19 +26,16 @@
       line-height: 1.7;
     }
 
-    a { color: var(--blue); text-decoration: none; }
-    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-
+    .container { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
     .topbar {
       background: var(--navy);
       color: white;
+      padding: 14px 0;
       position: sticky;
       top: 0;
-      z-index: 20;
-      padding: 14px 0;
+      z-index: 10;
       box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
     }
-
     .topbar .container {
       display: flex;
       justify-content: space-between;
@@ -50,51 +43,27 @@
       gap: 18px;
       flex-wrap: wrap;
     }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.92rem;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
+    .brand { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav { display: flex; gap: 18px; flex-wrap: wrap; }
     .nav a {
-      color: #eaf1ff;
+      color: #ebf2ff;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: 600;
-    }
-
-    .nav select {
-      background: white;
-      color: var(--navy);
-      border: none;
-      border-radius: 10px;
-      padding: 10px 12px;
-      min-width: 260px;
-      font-weight: 600;
-      cursor: pointer;
     }
 
     .hero {
       padding: 64px 0 28px;
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: center;
+    .hero-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
     }
-
     .eyebrow {
       display: inline-block;
+      margin-bottom: 16px;
       padding: 8px 12px;
       border-radius: 999px;
       background: rgba(37,99,235,0.12);
@@ -104,206 +73,34 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 16px;
     }
+    h1 { margin: 0 0 14px; font-size: clamp(2.3rem, 4vw, 3.5rem); color: var(--navy); }
+    .lead { margin: 0; max-width: 760px; color: var(--muted); font-size: 1.08rem; }
 
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.4rem, 4vw, 4.1rem);
-      line-height: 1.1;
-      color: var(--navy);
-    }
-
-    .lead {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 700px;
-      margin: 0;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-
-    .button:hover { transform: translateY(-1px); }
-
-    .button.primary {
-      background: var(--blue);
-      color: white;
-      box-shadow: var(--shadow);
-    }
-
-    .button.secondary {
-      background: white;
-      color: var(--navy);
-      border: 1px solid var(--line);
-    }
-
-    .hero-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 14px 10px;
-      border-radius: 12px;
-      color: white;
-      text-align: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .tag.blue { background: var(--blue); }
-    .tag.cyan { background: var(--cyan); }
-    .tag.green { background: var(--green); }
-    .tag.purple { background: var(--purple); }
-    .tag.amber { background: var(--amber); }
-    .tag.red { background: var(--red); }
-
-    .section { padding: 28px 0; }
-
-    .section-head {
-      margin-bottom: 18px;
-    }
-
-    .section-head h2 {
-      margin: 0 0 10px;
-      text-align: center;
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
-      color: var(--navy);
-    }
-
-    .section-head p {
-      margin: 0 auto;
-      max-width: 760px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
+    .section { padding: 24px 0 32px; }
     .card {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 22px;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
-    }
-
-    .card h3 { margin: 0 0 10px; color: var(--navy); font-size: 1.28rem; }
-    .card p, .card li, .card td { color: var(--muted); }
-
-    .pill {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .pill.blue { background: rgba(37,99,235,0.12); color: var(--blue); }
-    .pill.green { background: rgba(16,185,129,0.12); color: var(--green); }
-    .pill.purple { background: rgba(139,92,246,0.12); color: var(--purple); }
-    .pill.amber { background: rgba(245,158,11,0.12); color: var(--amber); }
-    .pill.red { background: rgba(239,68,68,0.12); color: var(--red); }
-
-    .article {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
       padding: 24px;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
     }
-
-    .article h3 {
-      margin: 22px 0 10px;
-      color: var(--navy);
-      font-size: 1.35rem;
-    }
-
-    .article h3:first-child { margin-top: 0; }
-
-    .article ul {
-      padding-left: 18px;
-      margin: 10px 0 0;
-    }
-
-    .table-wrap {
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f8fbff;
-      color: var(--navy);
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
+    .card h2 { margin-top: 0; color: var(--navy); }
+    ul { padding-left: 18px; color: var(--muted); }
     .back-btn {
       display: inline-block;
-      margin-top: 22px;
+      margin-top: 16px;
+      padding: 12px 18px;
+      border-radius: 12px;
       background: var(--navy);
       color: white;
-      border-radius: 10px;
-      padding: 12px 18px;
       font-weight: 700;
       text-decoration: none;
     }
-
     .footer {
       text-align: center;
       color: var(--muted);
-      padding: 30px 0 50px;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid, .two-col { grid-template-columns: 1fr; }
+      padding: 24px 0 40px;
     }
   </style>
 </head>
@@ -312,154 +109,39 @@
     <div class="container">
       <div class="brand">Punith Reddy</div>
       <nav class="nav">
-        <a href="index.html">About Me</a>
-        <select aria-label="Artifact navigation" onchange="if(this.value) window.location.href=this.value;">
-          <option value="artifact-ml-map.html">Machine Learning Algorithm Map</option>
-          <option value="index.html">About Me</option>
-          <option value="future-artifacts.html">Future Artifacts</option>
-        </select>
+        <a href="index.html">Home</a>
+        <a href="about.html">Bio</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Portfolio Artifact</div>
+      <div class="container">
+        <div class="hero-box">
+          <div class="eyebrow">Artifact</div>
           <h1>Machine Learning Algorithm Map</h1>
           <p class="lead">
-            This artifact explores how machine learning algorithms are organized by learning approach, application domain,
-            and practical business use. It distinguishes predictive models from generative models and highlights how different models are used in real-world technology contexts.
+            This artifact provides a simple map of machine learning models and learning approaches. It explains how supervised learning,
+            unsupervised learning, generative AI, and model selection relate to real-world use cases in data science, software development,
+            and business decision-making.
           </p>
-          <div class="cta-row">
-            <a class="button primary" href="#overview">Explore the Artifact</a>
-            <a class="button secondary" href="index.html">Back to About Me</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h3 style="margin:0; color:var(--navy);">Core Focus Areas</h3>
-          <div class="mini-grid">
-            <div class="tag blue">Supervised</div>
-            <div class="tag cyan">Unsupervised</div>
-            <div class="tag green">Computer Vision</div>
-            <div class="tag purple">NLP</div>
-            <div class="tag amber">Generative AI</div>
-            <div class="tag red">Prediction</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="overview" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Artifact Overview</h2>
-        </div>
-        <div class="two-col">
-          <div class="card">
-            <span class="pill blue">Title</span>
-            <h3>Machine Learning Algorithm Map</h3>
-            <p>Learning Types, Applications, and Generative AI</p>
-          </div>
-
-          <div class="card">
-            <span class="pill green">Introduction</span>
-            <p>
-              Machine learning is a crucial part of modern artificial intelligence because it helps computer systems identify patterns,
-              learn from data, and support predictions or decisions. Different algorithms are designed for different purposes.
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
-          <h2>Required Artifact Format</h2>
+        <div class="card">
+          <h2>Overview</h2>
+          <ul>
+            <li>Supervised learning uses labeled data to predict outcomes.</li>
+            <li>Unsupervised learning finds patterns and structure in unlabeled data.</li>
+            <li>Generative AI creates new content such as text, images, or synthetic media.</li>
+            <li>Model selection depends on data type, problem type, resources, and performance goals.</li>
+          </ul>
+          <a class="back-btn" href="index.html">← Back to Home</a>
         </div>
-        <div class="article">
-          <h3>Introduction</h3>
-          <p>
-            This visual framework organizes machine learning algorithms by learning approach and application domain,
-            including tabular data, computer vision, natural language processing, and generative AI. It is intended to make technical concepts easier to understand for students, aspiring AI professionals, and readers seeking an accessible introduction to machine learning.
-          </p>
-
-          <h3>Description</h3>
-          <p>
-            The Machine Learning Algorithm Map presents ten algorithms and model families through a visual classification system.
-            It highlights the purpose of each algorithm, its general learning approach, and examples of how it can be applied in real-world settings.
-            The framework covers linear regression, decision trees, random forests, gradient boosting, support vector machines,
-            convolutional neural networks, K-means clustering, principal component analysis, transformer models, diffusion models,
-            and generative adversarial networks.
-          </p>
-          <p>
-            These methods represent a range of approaches used in predictive analytics, pattern recognition, language processing,
-            and content generation. The framework also emphasizes that algorithm categories can overlap: transformer models can support both language classification and text generation, while CNNs can be used for image classification and other visual tasks.
-          </p>
-
-          <h3>Objective</h3>
-          <p>The purpose of this artifact is to demonstrate an understanding of how machine learning algorithms differ in learning approaches, technical functions, and application areas. It aims to:</p>
-          <ul>
-            <li>Classify commonly used algorithms and model architectures.</li>
-            <li>Distinguish supervised learning from unsupervised learning.</li>
-            <li>Explain the role of machine learning in tabular analysis, computer vision, and NLP.</li>
-            <li>Highlight generative AI approaches for creating text, images, and other content.</li>
-            <li>Connect technical concepts to realistic business and technology applications.</li>
-            <li>Communicate concepts through a structured, accessible visual framework.</li>
-          </ul>
-
-          <h3>Process</h3>
-          <p>
-            The framework was developed by first identifying major learning approaches and application domains. Algorithms were then grouped based on their primary functions and common problem types. Supervised methods were linked with prediction tasks using labeled examples, while unsupervised methods were associated with discovering patterns without predefined targets. Generative models were presented separately to highlight their ability to create new content.
-          </p>
-          <p>
-            The next step was to identify practical examples for each method. Linear regression was associated with numerical forecasting,
-            decision trees with rule-based decisions, random forests with predictive modeling, and gradient boosting with structured-data prediction. CNNs were connected to visual recognition while transformers were linked to language understanding and generation. K-means and PCA were included to demonstrate clustering and dimensionality reduction, respectively. Diffusion models and GANs were included to illustrate different generative AI approaches.
-          </p>
-          <p>
-            Finally, the information was organized into a visual framework with distinct sections, concise explanations, and connecting elements. The design was intended to help readers compare algorithms while recognizing that many methods can serve more than one application domain.
-          </p>
-
-          <h3>Tools and Technologies Used</h3>
-          <ul>
-            <li><strong>ChatGPT:</strong> Assisted with organizing concepts and developing a visual framework.</li>
-            <li><strong>Visual design and infographic generation:</strong> Used to present algorithm categories clearly.</li>
-            <li><strong>Google Machine Learning Crash Course:</strong> Used for foundational predictive modeling concepts.</li>
-            <li><strong>scikit-learn documentation:</strong> Used for supervised learning, clustering, and dimensionality reduction.</li>
-            <li><strong>IBM generative AI resources:</strong> Used for transformer, diffusion, and GAN explanations.</li>
-          </ul>
-
-          <h3>Value Proposition</h3>
-          <p>
-            This artifact demonstrates the ability to translate technical knowledge into a structured, visual learning resource. Rather than presenting algorithms as an unrelated list, it connects them to business problems and application domains. The result supports communication between technical and non-technical audiences and shows how model selection depends on the problem, data, and expected output.
-          </p>
-
-          <h3>Unique Value</h3>
-          <p>
-            The distinctive value of this framework is that it compares traditional machine learning techniques and generative AI within a single visual structure. It shows that choosing a model is more than recognizing an algorithm’s name; it also depends on understanding the data, problem objectives, expected outputs, and possible limitations.
-          </p>
-
-          <h3>Relevance</h3>
-          <p>
-            Machine learning knowledge is relevant to data analytics, business intelligence, software development, AI engineering, and consulting.
-            A business analyst may use tree-based models to estimate customer churn, a computer vision engineer may use CNN-based architectures to inspect images, and an AI developer may use transformer-based models to build conversational assistants.
-          </p>
-          <p>
-            In professional applications, model selection should consider data quality, predictive performance, interpretability, computational cost, privacy, fairness, and the consequences of incorrect predictions.
-          </p>
-
-          <h3>References</h3>
-          <ul>
-            <li>Google for Developers. (n.d.). Machine learning crash course. https://developers.google.com/machine-learning/crash-course/</li>
-            <li>IBM. (2026, October 2). What is generative AI? https://www.ibm.com/think/topics/generative-ai</li>
-            <li>scikit-learn developers. (n.d.). Machine learning in Python. https://scikit-learn.com/</li>
-          </ul>
-        </div>
-
-        <a class="back-btn" href="index.html">← Back to About Me</a>
       </div>
     </section>
   </main>

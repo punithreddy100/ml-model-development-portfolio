@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Machine Learning Algorithm Map</title>
+  <title>Punith Reddy | Portfolio</title>
   <style>
     :root {
-      --bg: #f3f7ff;
+      --bg: #f4f7fb;
       --panel: #ffffff;
       --navy: #0f172a;
       --blue: #2563eb;
@@ -14,23 +14,22 @@
       --green: #10b981;
       --amber: #f59e0b;
       --purple: #8b5cf6;
-      --red: #ef4444;
       --text: #1f2937;
       --muted: #475569;
       --line: #dfeaf6;
-      --shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+      --shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #edf5ff 0%, var(--bg) 100%);
+      background: linear-gradient(180deg, #eef5ff 0%, var(--bg) 100%);
       color: var(--text);
       line-height: 1.7;
     }
 
+    a { color: var(--blue); text-decoration: none; }
     .container {
       width: min(1100px, calc(100% - 32px));
       margin: 0 auto;
@@ -39,10 +38,11 @@
     .topbar {
       background: var(--navy);
       color: white;
-      padding: 16px 0;
+      padding: 18px 0;
       position: sticky;
       top: 0;
       z-index: 10;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
     }
 
     .topbar .container {
@@ -57,160 +57,107 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.96rem;
+      font-size: 0.92rem;
     }
 
     .nav {
       display: flex;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
-      font-size: 0.95rem;
     }
 
     .nav a {
-      color: #e2ebff;
-      text-decoration: none;
+      color: #eaf1ff;
+      font-weight: 600;
     }
 
     .hero {
-      padding: 70px 0 32px;
+      padding: 68px 0 36px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: center;
+    .hero-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 32px;
     }
 
     .eyebrow {
       display: inline-block;
+      margin-bottom: 16px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(37, 99, 235, 0.12);
+      background: rgba(37, 99, 235, 0.1);
       color: var(--blue);
-      border: 1px solid rgba(37, 99, 235, 0.15);
-      font-size: 0.78rem;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 16px;
     }
 
     h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.4rem, 4vw, 4rem);
-      line-height: 1.1;
+      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
       color: var(--navy);
+      line-height: 1.15;
     }
 
-    .lead {
+    .subtitle {
+      margin: 0;
+      max-width: 760px;
       font-size: 1.08rem;
       color: var(--muted);
-      max-width: 680px;
     }
 
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .button {
-      display: inline-block;
-      text-decoration: none;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-weight: 700;
-      transition: transform 0.2s ease;
-    }
-
-    .button:hover { transform: translateY(-1px); }
-
-    .button.primary {
-      background: var(--blue);
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .button.secondary {
-      background: #fff;
-      border: 1px solid var(--line);
-      color: var(--navy);
-    }
-
-    .hero-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 14px 10px;
-      text-align: center;
-      font-weight: 700;
-      color: white;
-      border-radius: 12px;
-      font-size: 0.9rem;
-    }
-
-    .tag.blue { background: var(--blue); }
-    .tag.cyan { background: var(--cyan); }
-    .tag.green { background: var(--green); }
-    .tag.purple { background: var(--purple); }
-    .tag.amber { background: var(--amber); }
-    .tag.red { background: var(--red); }
-
-    section {
-      padding: 30px 0;
+    .section {
+      padding: 20px 0 32px;
     }
 
     .section-head {
-      margin-bottom: 16px;
+      margin-bottom: 22px;
     }
 
     .section-head h2 {
       margin: 0 0 10px;
-      font-size: clamp(1.8rem, 3vw, 2.7rem);
-      color: var(--navy);
       text-align: center;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--navy);
     }
 
     .section-head p {
       margin: 0 auto;
-      max-width: 760px;
-      color: var(--muted);
+      max-width: 720px;
       text-align: center;
+      color: var(--muted);
     }
 
-    .two-col {
+    .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 22px;
+      padding: 24px;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .pill {
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .badge {
       display: inline-block;
-      margin-bottom: 12px;
       padding: 7px 10px;
+      margin-bottom: 12px;
       border-radius: 999px;
       font-size: 0.72rem;
       font-weight: 700;
@@ -218,384 +165,107 @@
       text-transform: uppercase;
     }
 
-    .pill.blue { background: rgba(37, 99, 235, 0.12); color: var(--blue); }
-    .pill.green { background: rgba(16, 185, 129, 0.12); color: var(--green); }
-    .pill.purple { background: rgba(139, 92, 246, 0.12); color: var(--purple); }
-    .pill.amber { background: rgba(245, 158, 11, 0.12); color: var(--amber); }
-    .pill.red { background: rgba(239, 68, 68, 0.12); color: var(--red); }
+    .badge.blue { background: rgba(37,99,235,0.12); color: var(--blue); }
+    .badge.green { background: rgba(16,185,129,0.12); color: var(--green); }
+    .badge.purple { background: rgba(139,92,246,0.12); color: var(--purple); }
+    .badge.amber { background: rgba(245,158,11,0.12); color: var(--amber); }
 
     .card h3 {
       margin: 0 0 10px;
-      color: var(--navy);
       font-size: 1.25rem;
+      color: var(--navy);
     }
 
-    .card p, .card li, .card td {
+    .card p {
+      margin: 0 0 16px;
       color: var(--muted);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: var(--blue);
+      color: white;
+      font-weight: 700;
     }
 
-    .algorithm-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.04);
+    .button.secondary {
+      background: var(--navy);
     }
-
-    .algorithm-card h3 {
-      margin: 0 0 8px;
-      color: var(--navy);
-      font-size: 1.2rem;
-    }
-
-    .method-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .method-box {
-      background: linear-gradient(180deg, #fff 0%, #f5f8ff 100%);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      min-height: 155px;
-    }
-
-    .method-box strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--navy);
-      font-size: 1.04rem;
-    }
-
-    .method-box p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .table-wrap {
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f8fbff;
-      color: var(--navy);
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .list li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .list li:last-child { border-bottom: none; }
 
     .footer {
       text-align: center;
       color: var(--muted);
-      padding: 30px 0 50px;
+      padding: 28px 0 40px;
     }
 
     @media (max-width: 900px) {
-      .hero-grid, .two-col, .grid, .method-row {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container">
-      <div class="brand">Model Development</div>
+      <div class="brand">Punith Reddy</div>
       <nav class="nav">
-        <a href="#overview">Overview</a>
-        <a href="#learning-types">Learning Types</a>
-        <a href="#algorithms">Algorithms</a>
-        <a href="#applications">Applications</a>
-        <a href="#references">References</a>
+        <a href="#about">About</a>
+        <a href="#artifacts">Artifacts</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Portfolio Artifact</div>
-          <h1>Machine Learning Algorithm Map</h1>
-          <p class="lead">
-            This visual framework organizes machine learning algorithms by learning approach and
-            application domain, including tabular data, computer vision, natural language processing,
-            and generative AI.
+    <section class="hero" id="about">
+      <div class="container">
+        <div class="hero-box">
+          <div class="eyebrow">Portfolio</div>
+          <h1>Machine Learning & AI Portfolio</h1>
+          <p class="subtitle">
+            Hello! I’m Punith Reddy, a software developer with a growing interest in artificial intelligence,
+            machine learning, and how these tools can solve real-world problems. This portfolio highlights my
+            learning journey, projects, and artifacts that reflect my understanding of ML concepts and practical application.
           </p>
-          <div class="cta-row">
-            <a class="button primary" href="#overview">Explore the Artifact</a>
-            <a class="button secondary" href="#applications">View Applications</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h3 style="margin:0; color:var(--navy);">Core Learning Areas</h3>
-          <div class="mini-grid">
-            <div class="tag blue">Supervised</div>
-            <div class="tag cyan">Unsupervised</div>
-            <div class="tag green">Computer Vision</div>
-            <div class="tag purple">NLP</div>
-            <div class="tag amber">Generative AI</div>
-            <div class="tag red">Prediction</div>
-          </div>
         </div>
       </div>
     </section>
 
-    <section id="overview">
+    <section class="section" id="artifacts">
       <div class="container">
         <div class="section-head">
-          <h2>Introduction</h2>
-          <p>
-            Machine learning is an important part of modern artificial intelligence because it enables
-            systems to identify patterns, learn from data, and support predictions or decisions.
-          </p>
-        </div>
-
-        <div class="two-col">
-          <div class="card">
-            <span class="pill blue">Objective</span>
-            <h3>Purpose of the artifact</h3>
-            <p>
-              The objective is to demonstrate an understanding of how machine learning algorithms differ
-              in learning approaches, technical functions, and application areas.
-            </p>
-          </div>
-
-          <div class="card">
-            <span class="pill green">Value</span>
-            <h3>Why this matters</h3>
-            <p>
-              This artifact connects algorithm functions to practical business and technology problems,
-              making technical concepts easier to understand for students and professional audiences.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="learning-types">
-      <div class="container">
-        <div class="section-head">
-          <h2>Learning Types</h2>
-          <p>
-            Machine learning methods are organized by how they learn from data and what they are designed to produce.
-          </p>
-        </div>
-
-        <div class="method-row">
-          <div class="method-box">
-            <strong>Supervised Learning</strong>
-            <p>Uses labeled examples to learn mappings between input features and target values.</p>
-          </div>
-          <div class="method-box">
-            <strong>Unsupervised Learning</strong>
-            <p>Discovers structure and hidden patterns in data without predefined labels.</p>
-          </div>
-          <div class="method-box">
-            <strong>Generative Models</strong>
-            <p>Learn patterns in data to create new content such as text, images, or synthetic output.</p>
-          </div>
-          <div class="method-box">
-            <strong>Hybrid / Multi-use</strong>
-            <p>Some methods can serve classification, prediction, and generation depending on the task.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="algorithms">
-      <div class="container">
-        <div class="section-head">
-          <h2>Algorithm Families</h2>
-          <p>
-            The framework includes predictive, clustering, dimensionality reduction, and generative methods.
-          </p>
+          <h2>Artifacts</h2>
+          <p>Below are the main artifacts in my portfolio. Click any card to open the full page.</p>
         </div>
 
         <div class="grid">
-          <div class="algorithm-card">
-            <span class="pill blue">Regression</span>
-            <h3>Linear Regression</h3>
-            <p>Predicts numerical outcomes using relationships between input variables and the target value.</p>
-          </div>
+          <article class="card">
+            <span class="badge blue">Artifact 1</span>
+            <h3>Machine Learning Algorithm Map</h3>
+            <p>A visual overview of major ML approaches, model families, and practical application areas.</p>
+            <a class="button" href="artifact-ml-map.html">Open Artifact</a>
+          </article>
 
-          <div class="algorithm-card">
-            <span class="pill green">Decision-Based</span>
-            <h3>Decision Trees</h3>
-            <p>Creates rule-based decisions for interpretable classification and regression tasks.</p>
-          </div>
+          <article class="card">
+            <span class="badge green">Artifact 2</span>
+            <h3>Learning Roadmap</h3>
+            <p>A structured plan showing my AI and ML growth path, focus areas, and technical learning goals.</p>
+            <a class="button" href="artifact-roadmap.html">Open Artifact</a>
+          </article>
 
-          <div class="algorithm-card">
-            <span class="pill amber">Ensemble</span>
-            <h3>Random Forests</h3>
-            <p>Combines many trees to improve stability and prediction accuracy on structured data.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill purple">Boosting</span>
-            <h3>Gradient Boosting</h3>
-            <p>Builds models sequentially to reduce errors and improve prediction quality.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill red">Margin-Based</span>
-            <h3>Support Vector Machines</h3>
-            <p>Finds boundaries that best separate data classes in high-dimensional feature spaces.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill blue">Vision</span>
-            <h3>Convolutional Neural Networks</h3>
-            <p>Detects patterns in images and visual data through convolutional operations.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill green">Clustering</span>
-            <h3>K-Means</h3>
-            <p>Groups similar observations based on distance to cluster centroids.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill purple">Reduction</span>
-            <h3>Principal Component Analysis</h3>
-            <p>Reduces dimensionality while retaining the most important information from the data.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill amber">NLP</span>
-            <h3>Transformers</h3>
-            <p>Uses attention to model context in text and supports language understanding and generation.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill blue">Generative</span>
-            <h3>Diffusion Models</h3>
-            <p>Learn to reverse noise to generate realistic content such as images or media.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill red">Generative</span>
-            <h3>GANs</h3>
-            <p>Uses competing generator and discriminator networks to learn realistic data distributions.</p>
-          </div>
-
-          <div class="algorithm-card">
-            <span class="pill green">Selection</span>
-            <h3>Model Choice</h3>
-            <p>Depends on data, expected output, computational constraints, and evaluation criteria.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="applications">
-      <div class="container">
-        <div class="section-head">
-          <h2>Application Domains</h2>
-          <p>
-            These algorithms connect to real-world tasks across structured data, vision, language, and content generation.
-          </p>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Domain</th>
-                <th>Example Methods</th>
-                <th>Typical Use Cases</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Tabular Data</td>
-                <td>Linear Regression, Random Forests, Gradient Boosting, SVM</td>
-                <td>Churn prediction, demand forecasting, fraud detection, pricing</td>
-              </tr>
-              <tr>
-                <td>Computer Vision</td>
-                <td>CNNs, Diffusion Models, GANs</td>
-                <td>Image classification, medical imaging, style transfer</td>
-              </tr>
-              <tr>
-                <td>Natural Language Processing</td>
-                <td>Transformers</td>
-                <td>Chatbots, translation, summarization, sentiment analysis</td>
-              </tr>
-              <tr>
-                <td>Unsupervised Discovery</td>
-                <td>K-Means, PCA</td>
-                <td>Segmentation, anomaly detection, dimensionality reduction</td>
-              </tr>
-              <tr>
-                <td>Generative AI</td>
-                <td>Transformers, Diffusion Models, GANs</td>
-                <td>Text generation, image synthesis, creative automation</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="references">
-      <div class="container">
-        <div class="section-head">
-          <h2>References</h2>
-        </div>
-
-        <div class="card">
-          <ul class="list">
-            <li>Google for Developers. Machine Learning Crash Course.</li>
-            <li>IBM. What is Generative AI?</li>
-            <li>scikit-learn developers. Machine Learning in Python.</li>
-          </ul>
+          <article class="card">
+            <span class="badge purple">About</span>
+            <h3>Detailed Bio</h3>
+            <p>A brief profile covering my professional background, interests, and learning goals.</p>
+            <a class="button secondary" href="about.html">View Bio</a>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">Machine Learning Algorithm Map • Model Development Portfolio Artifact</div>
+    <div class="container">Punith Reddy • Portfolio</div>
   </footer>
 </body>
 </html>
