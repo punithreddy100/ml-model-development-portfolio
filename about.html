@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Punith Reddy</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --cyan: #06b6d4;
+      --green: #10b981;
+      --amber: #f59e0b;
+      --purple: #8b5cf6;
+      --red: #ef4444;
+      --text: #1f2937;
+      --muted: #475569;
+      --line: #dfeaf6;
+      --shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #edf5ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.92rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #eaf1ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav select {
+      background: white;
+      color: var(--navy);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 12px;
+      min-width: 220px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 62px 0 30px;
+    }
+
+    .hero-inner {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--blue);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.3rem, 4vw, 3.6rem);
+      color: var(--navy);
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .section {
+      padding: 18px 0 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.3rem;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pill.blue { background: rgba(37,99,235,0.12); color: var(--blue); }
+    .pill.green { background: rgba(16,185,129,0.12); color: var(--green); }
+    .pill.purple { background: rgba(139,92,246,0.12); color: var(--purple); }
+    .pill.amber { background: rgba(245,158,11,0.12); color: var(--amber); }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 26px 0 40px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">Punith Reddy</div>
+      <nav class="nav">
+        <a href="about.html">About Me</a>
+        <select aria-label="Artifact selection" onchange="if(this.value) window.location.href=this.value;">
+          <option value="about.html">About Me</option>
+          <option value="index.html">Machine Learning Algorithm Map</option>
+          <option value="#">Future Artifacts</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="eyebrow">About Me</div>
+          <h1>Punith Reddy</h1>
+          <p class="subtitle">
+            I work as a software developer at Sacramento County and I’m excited to be part of this course, learn from others,
+            and build my knowledge in AI and machine learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid">
+        <div class="card">
+          <span class="pill blue">Professional Background</span>
+          <h3>Software Developer</h3>
+          <p>
+            I work as a software developer at Sacramento County, where I contribute to solving real-world problems using technology.
+            I am especially interested in software development and in exploring emerging technologies that can improve systems,
+            support decision-making, and create meaningful impact.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill green">AI / ML Interest</span>
+          <h3>Learning and Exploration</h3>
+          <p>
+            I am somewhat familiar with artificial intelligence and machine learning, and I am eager to expand my knowledge in these areas.
+            I believe AI and ML have strong potential to improve efficiency, enable better decision-making, and drive innovative solutions when used responsibly.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill purple">Personal Life</span>
+          <h3>Healthy Balance</h3>
+          <p>
+            In my free time, I enjoy running and playing outdoor games. These activities help me stay active and maintain a healthy balance between work and personal life.
+            One of my favorite dishes is biryani, which I always enjoy.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill amber">Course Goals</span>
+          <h3>My Learning Objectives</h3>
+          <p>
+            My main goal in this course is to build a stronger understanding of AI and machine learning and learn how to apply these tools in practical situations.
+            I am especially interested in exploring how these technologies can be integrated into software development and used to solve workplace problems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <span class="pill blue">Conclusion</span>
+          <h3>Looking Forward</h3>
+          <p>
+            I look forward to learning with everyone, sharing ideas, and collaborating throughout this course. I hope we all have a great learning experience and continue to grow together through practical exploration and thoughtful discussion.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Punith Reddy • Software Developer • Portfolio</div>
+  </footer>
+</body>
+</html>
